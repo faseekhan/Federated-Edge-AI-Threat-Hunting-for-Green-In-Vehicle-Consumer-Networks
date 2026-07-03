@@ -5,46 +5,66 @@ https://ieeexplore.ieee.org/abstract/document/11563534
 
 Proactive Threat Hunting and Anomaly Detection in Intelligent Green Transportation: A Federated Edge-AI Framework for In-Vehicle Consumer Networks
 
+Overview
 
-📘 Overview:
+This project implements a Federated Learning model using a Convolutional Neural Network (CNN). The model is trained and tested on the CICIoV2024 dataset to detect intrusions in in-vehicle networks.
 
-This repository presents an implementation of a Federated Learning (FL) framework integrated with a Convolutional Neural Network (CNN) model, trained and evaluated using the CICIoV2024 dataset. The project aims to design a decentralized, privacy-preserving intrusion detection system for Internet of Vehicles (IoV) environments while maintaining high accuracy and robust model performance.
+The main goal of this project is to build a privacy-preserving intrusion detection system for Internet of Vehicles (IoV) environments. In this system, data remains with each client, and only model updates are shared. This helps protect data privacy while maintaining good detection accuracy.
 
-🎯 Objectives:
+Objectives
 
-1. Develop a CNN-based intrusion detection model for IoV network data.
-2. Integrate the model within a federated learning framework to preserve data privacy across clients.
-3. Evaluate model performance using accuracy, precision, recall, F1-score, and AUC metrics.
-4. Compare results for both binary and multi-class classification scenarios.
+The main objectives of this project are:
 
-⚙️ Federated Learning Configuration
+Develop a CNN-based model to detect attacks in IoV network data.
 
-The federated setup follows TensorFlow Federated (TFF) architecture with the following steps:
+Use Federated Learning to train the model without sharing private client data.
 
-1. Model Initialization – The global CNN model is defined and broadcast to all clients.
-2. Local Training – Each client trains its local CNN model using private data.
-3. Model Aggregation – Local weights are securely aggregated on the central server.
-4. Global Update – The updated global model is redistributed to clients.
-5. Iteration – Steps 2–4 repeat for multiple rounds until convergence.
+Evaluate the model using accuracy, precision, recall, F1-score, confusion matrix, and AUC.
 
-🧪 Dataset: CICIoV2024
+Test the model for both binary classification and multi-class classification.
 
-The CICIoV2024 dataset is a recent and comprehensive dataset for intrusion detection in intra-vehicle networks.
-It contains labeled CAN-bus traffic data representing normal and attack patterns across multiple vehicle ECUs.
+Federated Learning Configuration
 
-Key Features:
-1. Real-world IoV attack scenarios
-2. Balanced and preprocessed features
-3. Suitable for Federated Learning and CNN-based models
+The Federated Learning setup follows the TensorFlow Federated (TFF) structure. The process works as follows:
 
-📊 Evaluation Metrics
+Model Initialization: A global CNN model is created and sent to all clients.
 
-The model performance is evaluated using:
-1. Accuracy
-2. Precision
-3. Recall
-4. F1-Score
-5. Confusion Matrix
-6. AUC Curve (Area Under ROC Curve)
+Local Training: Each client trains the CNN model using its own private data.
 
-Both binary and multi-class classification settings are supported.
+Model Aggregation: The trained model updates from all clients are collected and combined on the central server.
+
+Global Update: The updated global model is sent back to the clients.
+
+Repeated Training: These steps are repeated for several rounds until the model performance becomes stable.
+
+Dataset: CICIoV2024
+
+The CICIoV2024 dataset is used for intrusion detection in in-vehicle networks. It contains labeled CAN-bus traffic data, including both normal traffic and attack traffic from different vehicle ECUs.
+
+Key features of the dataset include:
+
+Realistic IoV attack scenarios.
+
+Preprocessed and balanced features.
+
+Suitable for CNN-based intrusion detection models.
+
+Suitable for Federated Learning experiments.
+
+Evaluation Metrics
+
+The model is evaluated using the following metrics:
+
+Accuracy
+
+Precision
+
+Recall
+
+F1-score
+
+Confusion matrix
+
+AUC curve
+
+The project supports both binary classification and multi-class classification.
