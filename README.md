@@ -1,5 +1,10 @@
-# Federated-Learning-with-CNN-using-CICIoV2024
+# Federated Machine Learning using CICIoV2024 for detection of intrusion detection from internet of vehicles
 Federated Learning model implementation using a Convolutional Neural Network (CNN) trained and evaluated on the CICIoV2024 dataset for intrusion detection in in-vehicle networks.
+
+https://ieeexplore.ieee.org/abstract/document/11563534
+
+Proactive Threat Hunting and Anomaly Detection in Intelligent Green Transportation: A Federated Edge-AI Framework for In-Vehicle Consumer Networks
+
 
 📘 Overview:
 
